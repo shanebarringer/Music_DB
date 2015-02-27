@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'bootstrap_form'
 gem 'bootstrap-sass', '~>3.3.3'
 gem 'carrierwave'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
