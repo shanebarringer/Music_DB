@@ -8,7 +8,7 @@
 <div class="container">
   <div class="row">
     <% @albums.each do |album| %>
-      <%= link_to image_tag(album.cover_url, class: 'col-md-3'), album %>
+      <%= link_to image_tag(album.cover_url, class: 'col-md-3 index-album-cover'), album %>
     <% end %>
   </div>
   <br>
@@ -16,3 +16,4 @@
 </div>
 
 
+<%= will_paginate @albums, renderer: BootstrapPagination::Rails %>

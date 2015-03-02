@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'friendly_id', '~> 5.1.0'
 gem 'bootstrap_form'
 gem 'bootstrap-sass', '~>3.3.3'
 gem 'carrierwave'

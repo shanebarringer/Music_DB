@@ -5,4 +5,7 @@ class Genre < ActiveRecord::Base
 
 	validates :name, presence: true
 	validates :name, length: {minimum: 2}
+
+	extend FriendlyId
+  	friendly_id :name, use: :slugged
 end

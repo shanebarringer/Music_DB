@@ -29,3 +29,5 @@
 <br>
 
 <%= link_to 'New Artist', new_artist_path %>
+
+<%= will_paginate @artists, renderer: BootstrapPagination::Rails %>
