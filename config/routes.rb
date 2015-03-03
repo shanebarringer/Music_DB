@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   get '/about' => 'static_pages#about', as: 'about'
 
-  devise_for :users
+  get '/welcome' => 'static_pages#welcome', as: 'welcome'
+
+  devise_for :users, controllers: {
+        registrations: 'user/registrations'
+      }
 
   resources :genres
 
