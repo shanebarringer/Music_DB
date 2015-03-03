@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/about' => 'static_pages#about', as: 'about'
 
+  devise_for :users
+
   resources :genres
 
   resources :songs
