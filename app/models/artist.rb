@@ -8,4 +8,7 @@ class Artist < ActiveRecord::Base
 	validates :bio, length: {maximum: 1000}
 	validates :name, uniqueness: true
 
+	extend FriendlyId
+  	friendly_id :name, use: :slugged
+
 end

@@ -1,0 +1,70 @@
+<div class="jumbotron">
+	<br>
+	<br>
+	<h2>Welcome To MusicDB</h2>
+	<h1>The Music You Want. Now.</h1>
+	<br>
+	<br>
+</div>
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="panel panel-success col">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Popular Genres</h3>
+		  </div>
+		  <div class="panel-body">
+		  <ol>
+		    <% Genre.all.sample(5).each do |genre| %>
+		    	<li><%= link_to genre.name, genre %></li>
+		    <% end %>
+		  </ol>
+		  </div>
+		</div>
+	</div>
+
+	<div class="col-md-3">
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Popular Artists</h3>
+		  </div>
+		  <div class="panel-body">
+		  <ol>
+		    <% Artist.all.sample(5).each do |artist| %>
+		    	<li><%= link_to artist.name, artist %></li>
+		    <% end %>
+		  </ol>
+		  </div>
+		</div>
+	</div>
+
+	<div class="col-md-3">
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Popular Albums</h3>
+		  </div>
+		  <div class="panel-body">
+		  <ol>
+		    <% Album.all.sample(5).each do |album| %>
+		    	<li><%= link_to album.title, album %></li>
+		    <% end %>
+		  </ol>
+		  </div>
+		</div>
+	</div>
+
+	<div class="col-md-3">
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Panel Songs</h3>
+		  </div>
+		  <div class="panel-body">
+		  <ol>
+		    <% Song.all.sample(5).each do |song| %>
+		    	<li><%= link_to song.name, song %></li>
+		    <% end %>
+		  </ol>
+		  </div>
+		</div>
+	</div>
+</div>

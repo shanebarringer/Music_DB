@@ -1,10 +1,11 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    @albums = Album.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /albums/1
@@ -68,11 +69,11 @@ class AlbumsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
-      @album = Album.find(params[:id])
+      @album = Album.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:title, :genre_id, :artist_id)
+      params.require(:album).permit(:title, :genre_id, :artist_id, :cover)
     end
 end
