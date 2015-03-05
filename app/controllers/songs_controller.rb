@@ -11,6 +11,13 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
+    require 'grooveshark'
+    client = Grooveshark::Client.new
+    session = client.session
+
+    songs = client.search_songs("#{@song.artist.name} #{@song.name} #{@song.album.title}")
+
+    @track = songs.first
   end
 
   # GET /songs/new

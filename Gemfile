@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'grooveshark'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'will_paginate'
