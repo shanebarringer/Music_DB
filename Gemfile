@@ -1,14 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'grooveshark'
-gem 'activeadmin', github: 'activeadmin'
-gem 'devise'
-gem 'will_paginate'
-gem 'will_paginate-bootstrap'
-gem 'friendly_id', '~> 5.1.0'
-gem 'bootstrap_form'
-gem 'bootstrap-sass', '~>3.3.3'
-gem 'carrierwave'
+gem 'musix_match' #lyric api
+gem 'figaro' #to hide api keys
+gem 'grooveshark' #to pull in music streaming
+gem 'activeadmin', github: 'activeadmin' #create an admin portal
+gem 'devise' #create users, and authentication
+gem 'will_paginate' #paginate our resources
+gem 'will_paginate-bootstrap' #make will_paginate bootstrap friendly
+gem 'friendly_id', '~> 5.1.0' #give us good looking urls
+gem 'bootstrap_form' #make forms bootstrap friendly
+gem 'bootstrap-sass', '~>3.3.3' #pull in bootstrap
+gem 'carrierwave' #upload album covers
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record

@@ -1,19 +1,27 @@
-<p id="notice"><%= notice %></p>
+<center>
+  <h1><%= @artist.name %></h1>
+  <h3><%= link_to @artist.genre.name, genre_path(@artist.genre) %></h3>
+  <p><%= @artist.bio %><p>
+</center>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
+<div class="row">
+	<% @artist.albums.each do |album| %>
+	<div class="col-md-4">
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title"><%= link_to album.title, album %></h3>
+		  </div>
+		  <div class="panel-body">
+		  <ol>
+		    <% album.songs.each do |song| %>
+		    	<li><%= link_to song.name, song %></li>
+		    <% end %>
+		  </ol>
+		  </div>
+		</div>
+	</div>
+	<% end %>
+</div>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @artist.bio %>
-</p>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @artist.genre.name %>
-</p>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
