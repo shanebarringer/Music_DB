@@ -1,24 +1,18 @@
-<p id="notice"><%= notice %></p>
+<center>
+	<h1><%= @song.name %></h1>
+	<h2><%= link_to @song.artist.name, artist_path(@song.artist) %> | <%= link_to @song.album.title, album_path(@song.album) %> | <%= link_to @song.genre.name, genre_path(@song.genre) %></h2>
 
-<p>
-  <strong>Name:</strong>
-  <%= @song.name %>
-</p>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @song.genre.name %>
-</p>
+	<br>
+	<br>
+	<object width="250" height="40" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="gsSong<%= @track.id %>" name="gsSong<%= @track.id %>"><param name="movie" value="http://grooveshark.com/songWidget.swf" /><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&songID=<%= @track.id %>&style=metal&p=0" /><object type="application/x-shockwave-flash" data="http://grooveshark.com/songWidget.swf" width="250" height="40"><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&songID=<%= @track.id %>&style=metal&p=0" /><span></span></object></object> 
+	<br>
+	<br>
+	<br>
 
-<p>
-  <strong>Artist:</strong>
-  <%= @song.artist.name %>
-</p>
+<center>
+	<p><%= @lyrics %></p>
+</center>
 
-<p>
-  <strong>Album:</strong>
-  <%= @song.album.title%>
-</p>
-
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+</center>
+<P style="position: absolute; bottom: 0;">Song audio powered by <a href="http://grooveshark.com/">Grooveshark</a> | Song lyrics powered by <a href="https://www.musixmatch.com/">MusixMatch</a></P>

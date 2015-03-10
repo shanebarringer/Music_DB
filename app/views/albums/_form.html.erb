@@ -21,7 +21,7 @@
     <%= f.collection_select :artist_id, @artists, :id, :name %>
   </div>
   <div class="field">
-    <%= f.file_field :cover %>
+    <%= f.file_field :cover, class: "btn btn-default btn-sm" %>
   </div>
   <div class="actions">
     <%= f.submit %>

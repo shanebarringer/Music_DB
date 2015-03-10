@@ -1,9 +1,52 @@
-<p id="notice"><%= notice %></p>
+<center>
+	<h1><%= @genre.name %></h1>
+</center>
 
-<p>
-  <strong>Name:</strong>
-  <%= @genre.name %>
-</p>
+<div class="row">
+	<div class="col-md-4">
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Popular Artists in <%= @genre.name %></h3>
+		  </div>
+		  <div class="panel-body">
+		  <ol>
+		    <% @genre.artists.sample(5).each do |artist| %>
+		    	<li><%= link_to artist.name, artist %></li>
+		    <% end %>
+		  </ol>
+		  </div>
+		</div>
+	</div>
 
-<%= link_to 'Edit', edit_genre_path(@genre) %> |
-<%= link_to 'Back', genres_path %>
+	<div class="col-md-4">
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Popular Albums in <%= @genre.name %></h3>
+		  </div>
+		  <div class="panel-body">
+		  <ol>
+		    <% @genre.albums.sample(5).each do |album| %>
+		    	<li><%= link_to album.title, album %></li>
+		    <% end %>
+		  </ol>
+		  </div>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Panel Songs in <%= @genre.name %></h3>
+		  </div>
+		  <div class="panel-body">
+		  <ol>
+		    <% @genre.songs.sample(5).each do |song| %>
+		    	<li><%= link_to song.name, song %></li>
+		    <% end %>
+		  </ol>
+		  </div>
+		</div>
+	</div>
+</div>
+
+
